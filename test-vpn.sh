@@ -1,3 +1,4 @@
+#!/dev/sh
 WAN_IP="$(nvram get wan_gateway)"
 WAN_IF="$(ip route | sed -n "s/.*via $WAN_IP dev \([[:alnum:]]*\).*/\1/p")"
 if ifconfig|grep -qF ‘wg0’; then
